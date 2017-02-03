@@ -166,6 +166,7 @@ if (window.BeerRouter === undefined) {
                   "14+"
                 )
               ),
+              React.createElement("div", null),
               theList
             )
           )
