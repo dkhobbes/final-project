@@ -8,34 +8,32 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-window.SW = window.SW || {};
-
+window.BeerRouter = window.BeerRouter || {};
 (function () {
-  var mountNode = document.querySelector('#react-root');
+  var IbuComponent = function (_React$Component) {
+    _inherits(IbuComponent, _React$Component);
 
-  var AppComponent = function (_React$Component) {
-    _inherits(AppComponent, _React$Component);
+    function IbuComponent() {
+      _classCallCheck(this, IbuComponent);
 
-    function AppComponent() {
-      _classCallCheck(this, AppComponent);
-
-      return _possibleConstructorReturn(this, (AppComponent.__proto__ || Object.getPrototypeOf(AppComponent)).apply(this, arguments));
+      return _possibleConstructorReturn(this, (IbuComponent.__proto__ || Object.getPrototypeOf(IbuComponent)).call(this));
     }
 
-    _createClass(AppComponent, [{
+    _createClass(IbuComponent, [{
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        console.log('AppComponent.ComponentDidMount');
+      }
+    }, {
       key: 'render',
       value: function render() {
-        return React.createElement(
-          'div',
-          null,
-          React.createElement(SW.BeerSampleComponent, null)
-        );
+        return React.createElement('div', null);
       }
     }]);
 
-    return AppComponent;
+    return IbuComponent;
   }(React.Component);
 
-  ReactDOM.render(React.createElement(AppComponent, null), mountNode);
+  BeerRouter.IbuComponent = IbuComponent;
 })();
-//# sourceMappingURL=script.js.map
+//# sourceMappingURL=ibu.js.map
