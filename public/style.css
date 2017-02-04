@@ -197,7 +197,10 @@ a:visited {
   background-color: rgba(25, 20, 71, 0.4); }
 
 #divs2center {
-  padding-top: 50px; }
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 90%;
+  overflow: auto; }
 
 #home-center {
   border-right: 2px solid lightgray;
