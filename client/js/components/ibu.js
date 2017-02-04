@@ -77,6 +77,8 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
           </section>
           {theList}
           </div>
+          <footer></footer>
+
         </div>
       </div>
     }

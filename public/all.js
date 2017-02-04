@@ -168,7 +168,8 @@ if (window.BeerRouter === undefined) {
               ),
               React.createElement("div", null),
               theList
-            )
+            ),
+            React.createElement("footer", null)
           )
         );
       }
@@ -862,7 +863,8 @@ if (window.BeerRouter === undefined) {
                 )
               ),
               theList
-            )
+            ),
+            React.createElement('footer', null)
           )
         );
       }
