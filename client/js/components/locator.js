@@ -141,6 +141,8 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
           <div className="zipSearch">
     				<input id="textZip" type="text" placeholder="enter state" onKeyUp={(evt) => { this.keyUp(evt); }} ref={(input) => { this.myInput = input; }} />
     				<button type="submit" className="learnButton" onClick={(evt)=>{this.getTheData(evt); }} >Search for State</button>
+            <button type="submit" className="learnButton" onClick={(evt)=>{this.getTheData(evt); }} >Clear results</button>
+
   			  </div>
         </form>
 

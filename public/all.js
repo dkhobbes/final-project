@@ -944,6 +944,13 @@ if (window.BeerRouter === undefined) {
                       _this6.getTheData(evt);
                     } },
                   'Search for State'
+                ),
+                React.createElement(
+                  'button',
+                  { type: 'submit', className: 'learnButton', onClick: function onClick(evt) {
+                      _this6.getTheData(evt);
+                    } },
+                  'Clear results'
                 )
               )
             )
