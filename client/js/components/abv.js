@@ -7,7 +7,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
       super();
       this.state= {
         currentClass: 'nav-2',
-        apiResult: true
+        apiResult: { data: [] }
       };
     }
     componentDidMount() {
@@ -24,26 +24,10 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
           var dataAsObjects = JSON.parse(data);
           // console.log('got data', dataAsObjects);
-
           this.setState({
-            if (apiResult: true) {
-              apiResult: dataAsObjects
-
-            }
+            apiResult: dataAsObjects,
+            currentClass: query
           });
-
-          if(this.state.currentClass === 'nav-2-on' && apiResult != null){
-            this.setState({
-              currentClass: 'nav-2',
-              apiResult: dataAsObjects
-            });
-          }
-          else {
-            this.setState({
-              currentClass: 'nav-2-on',
-              apiResult: dataAsObjects
-            });
-          }
         });
     }
 
@@ -56,7 +40,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
         console.log(this.state.apiResult);
         theList = <ul className="theList">
           {this.state.apiResult.data.map((abv, index) => {
-            return <li key={index}> <img src={abv.labels.medium} className="abvIbuImg" /><h2 className="beerImgText">Abv:{abv.abv}</h2> </li>
+            return <li key={index}> <img src={abv.labels.medium} className="abvIbuImg" /><h2 className="beerImgText">Abv:{abv.abv}</h2><h2 className="ellipses beerImgText" title={abv.name}>{abv.name}</h2> </li>
           })}
         </ul>;
       }
@@ -74,11 +58,11 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
         <div className="ibu-content">
           <section>
-            <div className={this.state.currentClass} onClick={(evt)=>{this.getTheData(evt,"2,4")}}> 2-4</div>
-            <div className="nav-2" onClick={(evt)=>{this.getTheData(evt,"5,7")}}>5-7</div>
-            <div className="nav-2" onClick={(evt)=>{this.getTheData(evt,"8,10")}}>8-10</div>
-            <div className="nav-2" onClick={(evt)=>{this.getTheData(evt,"11,13")}}>11-13</div>
-            <div className="nav-2" onClick={(evt)=>{this.getTheData(evt,"14,80")}}>14+</div>
+            <div className={this.state.currentClass === "2,4" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"2,4")}}> 2-4</div>
+            <div className={this.state.currentClass === "5,7" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"5,7")}}>5-7</div>
+            <div className={this.state.currentClass === "8,10" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"8,10")}}>8-10</div>
+            <div className={this.state.currentClass === "11,13" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"11,13")}}>11-13</div>
+            <div className={this.state.currentClass === "14,80" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"14,80")}}>14+</div>
           </section>
           <div>
           </div>

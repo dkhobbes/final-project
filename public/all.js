@@ -22,7 +22,7 @@ if (window.BeerRouter === undefined) {
 
       _this.state = {
         currentClass: 'nav-2',
-        apiResult: true
+        apiResult: { data: [] }
       };
       return _this;
     }
@@ -44,24 +44,10 @@ if (window.BeerRouter === undefined) {
 
           var dataAsObjects = JSON.parse(data);
           // console.log('got data', dataAsObjects);
-
           _this2.setState({
-            if: function _if(apiResult) {
-              apiResult: dataAsObjects;
-            }
+            apiResult: dataAsObjects,
+            currentClass: query
           });
-
-          if (_this2.state.currentClass === 'nav-2-on' && apiResult != null) {
-            _this2.setState({
-              currentClass: 'nav-2',
-              apiResult: dataAsObjects
-            });
-          } else {
-            _this2.setState({
-              currentClass: 'nav-2-on',
-              apiResult: dataAsObjects
-            });
-          }
         });
       }
     }, {
@@ -88,6 +74,11 @@ if (window.BeerRouter === undefined) {
                   { className: 'beerImgText' },
                   'Abv:',
                   abv.abv
+                ),
+                React.createElement(
+                  'h2',
+                  { className: 'ellipses beerImgText', title: abv.name },
+                  abv.name
                 ),
                 ' '
               );
@@ -150,35 +141,35 @@ if (window.BeerRouter === undefined) {
                 null,
                 React.createElement(
                   'div',
-                  { className: this.state.currentClass, onClick: function onClick(evt) {
+                  { className: this.state.currentClass === "2,4" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "2,4");
                     } },
                   ' 2-4'
                 ),
                 React.createElement(
                   'div',
-                  { className: 'nav-2', onClick: function onClick(evt) {
+                  { className: this.state.currentClass === "5,7" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "5,7");
                     } },
                   '5-7'
                 ),
                 React.createElement(
                   'div',
-                  { className: 'nav-2', onClick: function onClick(evt) {
+                  { className: this.state.currentClass === "8,10" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "8,10");
                     } },
                   '8-10'
                 ),
                 React.createElement(
                   'div',
-                  { className: 'nav-2', onClick: function onClick(evt) {
+                  { className: this.state.currentClass === "11,13" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "11,13");
                     } },
                   '11-13'
                 ),
                 React.createElement(
                   'div',
-                  { className: 'nav-2', onClick: function onClick(evt) {
+                  { className: this.state.currentClass === "14,80" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "14,80");
                     } },
                   '14+'
