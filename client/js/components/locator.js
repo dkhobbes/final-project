@@ -26,9 +26,9 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
 
     {/*  var contentString = '<div id="content">'+
-            '<h1 id="firstHeading">brewery.streetAdress</h1>'+
-            '<h3>' + ['Address'] + '</h3>' +
-            '<p>' + ['Schedule'] + '</p>' +
+            '<h3>' + data['locality'] + '</h3>' +
+            '<p>' + data['region'] + '</p>' +
+            '<p>' + data['postalCode'] + '</p>' +
             '</div>';
 
       var infowindow = new google.maps.InfoWindow({
@@ -55,11 +55,35 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
         console.log(myLatLng);
         console.log(this.googleMap);
 
+        var contentString = '<div id="content">'+
+                '<h3>' + ['locality'] + '</h3>' +
+                '<h3>' + ['region'] + '</h3>' +
+                '<h3>' + ['postalCode'] + '</h3>' +
+                '</div>';
+
+          var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
+
         var marker = new google.maps.Marker({
         position: myLatLng,
         map: this.googleMap,
-        title: 'Hello World!'
+        title: 'Beer Me Finder!'
         });
+
+        allLatlng.push(myLatlng);
+
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+
+          var bounds = new google.maps.LatLngBounds ();
+          for (var i = 0, LtLgLen = allLatlng.length; i < LtLgLen; i++) {
+            bounds.extend (allLatlng[i]);
+          }
+          map.fitBounds (bounds);
+
       })
     }
 
