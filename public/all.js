@@ -738,6 +738,7 @@ if (window.BeerRouter === undefined) {
   var pos;
   var userCords;
   var tempMarkerHolder = [];
+  var markers = [];
 
   var Map = function (_React$Component) {
     _inherits(Map, _React$Component);
@@ -792,7 +793,9 @@ if (window.BeerRouter === undefined) {
           console.log(myLatLng);
           console.log(_this2.googleMap);
 
-          var contentString = '<div id="content">' + '<h3>' + ['locality'] + '</h3>' + '<h3>' + ['region'] + '</h3>' + '<h3>' + ['postalCode'] + '</h3>' + '</div>';
+          console.log('LOCALITY', brewery);
+
+          var contentString = '<div className="content">' + '<h2>Brewery: ' + brewery.brewery.name + '</h2>' + '<h3>' + brewery.locality + ', ' + brewery.region + ' ' + brewery.postalCode + '</h3>' + '<a href= "' + brewery.brewery.website + '" target="_blank">' + brewery.brewery.website + '</a>' + '</div>';
 
           var infowindow = new google.maps.InfoWindow({
             content: contentString
@@ -804,7 +807,7 @@ if (window.BeerRouter === undefined) {
             title: 'Beer Me Finder!'
           });
 
-          allLatlng.push(myLatlng);
+          allLatlng.push(myLatLng);
 
           marker.addListener('click', function () {
             infowindow.open(map, marker);
@@ -814,7 +817,10 @@ if (window.BeerRouter === undefined) {
           for (var i = 0, LtLgLen = allLatlng.length; i < LtLgLen; i++) {
             bounds.extend(allLatlng[i]);
           }
-          map.fitBounds(bounds);
+
+          _this2.googleMap.fitBounds(bounds);
+          console.log("bounds test", bounds);
+          markers.push(marker);
         });
       }
     }, {
@@ -859,6 +865,7 @@ if (window.BeerRouter === undefined) {
         // console.log(evt);
         // if (evt.keyCode === 13) {
         // var zip =input.value
+
         $.ajax({
           url: "/api/state/" + this.myInput.value
         }).done(function (data) {
@@ -871,6 +878,23 @@ if (window.BeerRouter === undefined) {
           });
         });
         // }
+      }
+    }, {
+      key: 'clearHandler',
+      value: function clearHandler(evt) {
+        function setMapOnAll(map) {
+          for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+          }
+        }
+
+        function clearMarkers() {
+          setMapOnAll(null);
+        }
+
+        clearMarkers();
+        markers = [];
+        allLatlng = [];
       }
     }, {
       key: 'keyUp',
@@ -984,7 +1008,7 @@ if (window.BeerRouter === undefined) {
                 React.createElement(
                   'button',
                   { type: 'submit', className: 'learnButton', onClick: function onClick(evt) {
-                      _this6.getTheData(evt);
+                      _this6.clearHandler(evt);
                     } },
                   'Clear results'
                 )

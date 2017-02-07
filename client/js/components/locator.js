@@ -8,6 +8,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 	var pos;
 	var userCords;
 	var tempMarkerHolder = [];
+  var markers = [];
 
 
   class Map extends React.Component {
@@ -55,10 +56,14 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
         console.log(myLatLng);
         console.log(this.googleMap);
 
-        var contentString = '<div id="content">'+
-                '<h3>' + ['locality'] + '</h3>' +
-                '<h3>' + ['region'] + '</h3>' +
-                '<h3>' + ['postalCode'] + '</h3>' +
+        console.log('LOCALITY', brewery)
+
+        var contentString = '<div className="content">'+
+                '<h2>Brewery: ' + brewery.brewery.name + '</h2>' +
+                '<h3>' + brewery.locality + ', '+brewery.region +' '+brewery.postalCode +'</h3>' +
+
+                '<a href= "'+ brewery.brewery.website +'" target="_blank">' +  brewery.brewery.website + '</a>' +
+
                 '</div>';
 
           var infowindow = new google.maps.InfoWindow({
@@ -66,23 +71,26 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
             });
 
         var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: this.googleMap,
-        title: 'Beer Me Finder!'
+          position: myLatLng,
+          map: this.googleMap,
+          title: 'Beer Me Finder!'
         });
 
-        allLatlng.push(myLatlng);
+        allLatlng.push(myLatLng);
 
 
         marker.addListener('click', function() {
-            infowindow.open(map, marker);
-          });
+          infowindow.open(map, marker);
+        });
 
-          var bounds = new google.maps.LatLngBounds ();
-          for (var i = 0, LtLgLen = allLatlng.length; i < LtLgLen; i++) {
-            bounds.extend (allLatlng[i]);
-          }
-          map.fitBounds (bounds);
+        var bounds = new google.maps.LatLngBounds ();
+        for (var i = 0, LtLgLen = allLatlng.length; i < LtLgLen; i++) {
+          bounds.extend (allLatlng[i]);
+        }
+
+        this.googleMap.fitBounds (bounds);
+        console.log("bounds test", bounds);
+        markers.push(marker);
 
       })
     }
@@ -113,6 +121,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
       // console.log(evt);
       // if (evt.keyCode === 13) {
       // var zip =input.value
+
       $.ajax({
         url: "/api/state/" + this.myInput.value
       })
@@ -124,9 +133,27 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
         this.setState ({
           apiResult: dataAsObjects
         })
+
       });
       // }
     }
+
+    clearHandler(evt) {
+      function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+
+      function clearMarkers() {
+        setMapOnAll(null);
+      }
+
+      clearMarkers();
+      markers = [];
+      allLatlng = [];
+    }
+
 
     keyUp(evt) {
       if (evt.keyCode === 13) {
@@ -165,7 +192,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
           <div className="zipSearch">
     				<input id="textZip" type="text" placeholder="enter state" onKeyUp={(evt) => { this.keyUp(evt); }} ref={(input) => { this.myInput = input; }} />
     				<button type="submit" className="learnButton" onClick={(evt)=>{this.getTheData(evt); }} >Search for State</button>
-            <button type="submit" className="learnButton" onClick={(evt)=>{this.getTheData(evt); }} >Clear results</button>
+            <button type="submit" className="learnButton" onClick={(evt)=>{this.clearHandler(evt); }} >Clear results</button>
 
   			  </div>
         </form>
