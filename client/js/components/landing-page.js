@@ -19,7 +19,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
         <div id="home-picture">
         <div id="divs2center">
           <div className="home-section" id="home-center"><h1>Welcome to Beer Me Finder</h1></div>
-          <div className="home-section" id="home-2" ><p>Please enjoy this application devouted to the beer and Breweries near you. You can look at the breweries in your area, or see what beer has the highest abv to kick your butt.</p></div>
+          <div className="home-section" id="home-2" ><p>Please enjoy this application devoted to the beer and Breweries near you. You can look at the breweries in your area, or see what beer has the highest abv to kick your butt.</p></div>
         </div>
         </div>
       </div>

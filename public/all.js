@@ -684,7 +684,7 @@ if (window.BeerRouter === undefined) {
                 React.createElement(
                   'p',
                   null,
-                  'Please enjoy this application devouted to the beer and Breweries near you. You can look at the breweries in your area, or see what beer has the highest abv to kick your butt.'
+                  'Please enjoy this application devoted to the beer and Breweries near you. You can look at the breweries in your area, or see what beer has the highest abv to kick your butt.'
                 )
               )
             )
