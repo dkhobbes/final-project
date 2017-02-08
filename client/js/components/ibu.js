@@ -66,7 +66,16 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
             <div className={this.state.currentClass === "71,100" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"71,100")}}>71-100</div>
             <div className={this.state.currentClass === "101,250" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"101,250")}}>101+</div>
           </section>
-          {theList}
+          <div>
+          </div>
+          {
+            this.state.apiResult.data.length
+            ? theList
+            : <div>
+              <h2>Welcome to the IBU page</h2>
+              <h3>IBU stands for International Bitterness Unit volume.</h3>
+            </div>
+          }
           </div>
           <footer></footer>
 

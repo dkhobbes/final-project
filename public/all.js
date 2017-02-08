@@ -589,7 +589,21 @@ if (window.BeerRouter === undefined) {
                   '101+'
                 )
               ),
-              theList
+              React.createElement('div', null),
+              this.state.apiResult.data.length ? theList : React.createElement(
+                'div',
+                null,
+                React.createElement(
+                  'h2',
+                  null,
+                  'Welcome to the IBU page'
+                ),
+                React.createElement(
+                  'h3',
+                  null,
+                  'IBU stands for International Bitterness Unit volume.'
+                )
+              )
             ),
             React.createElement('footer', null)
           )
