@@ -68,7 +68,14 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
           </section>
           <div>
           </div>
-          {theList}
+          {
+            this.state.apiResult.data.length
+              ? theList
+              : <div>
+                <h2>Welcome to the ABV page</h2>
+                <h3>ABV stands for alcohol by volume.</h3>
+              </div>
+          }
           </div>
           <footer></footer>
 

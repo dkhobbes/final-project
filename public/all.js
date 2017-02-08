@@ -178,7 +178,20 @@ if (window.BeerRouter === undefined) {
                 )
               ),
               React.createElement('div', null),
-              theList
+              this.state.apiResult.data.length ? theList : React.createElement(
+                'div',
+                null,
+                React.createElement(
+                  'h2',
+                  null,
+                  'Welcome to the ABV page'
+                ),
+                React.createElement(
+                  'h3',
+                  null,
+                  'ABV stands for alcohol by volume.'
+                )
+              )
             ),
             React.createElement('footer', null)
           )
@@ -777,7 +790,7 @@ if (window.BeerRouter === undefined) {
 
           console.log('LOCALITY', brewery);
 
-          var contentString = '<div className="content">' + '<h2>Brewery: ' + brewery.brewery.name + '</h2>' + '<h2>Brewery Type: ' + brewery.locationTypeDisplay + '</h2>' + '<h3>' + brewery.locality + ', ' + brewery.region + ' ' + brewery.postalCode + '</h3>' + '<a href= "' + brewery.brewery.website + '" target="_blank">' + brewery.brewery.website + '</a>' + '</div>';
+          var contentString = '<div className="content">' + '<h2>Brewery: ' + (brewery.brewery.name || '') + '</h2>' + '<h2>Brewery Type: ' + (brewery.locationTypeDisplay || '') + '</h2>' + '<h3>' + (brewery.locality || '') + ', ' + (brewery.region || '') + ' ' + (brewery.postalCode || '') + '</h3>' + (brewery.brewery.website ? '<a href= "' + brewery.brewery.website + '" target="_blank">' + brewery.brewery.website + '</a>' : '') + '</div>';
 
           var infowindow = new google.maps.InfoWindow({
             content: contentString
