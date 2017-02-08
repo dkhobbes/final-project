@@ -61,12 +61,16 @@ html, body {
     background-size: cover;
   }
 
+  .example-2 {
+    width: 100;
+  }
+  
   .example-2 p {
     width: 96%;
     height: 400px;
     background-color:  $background-color;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 36px;
     text-align: center;
     padding-top: 13%;
     padding-bottom: 13%;
@@ -163,14 +167,12 @@ header {
   border-radius: 5px 5px 0 0 ;
 }
 
-header a:link {
-    text-decoration: none;
-}
-
-header a:visited {
+header a:link,
+header a:visited  {
     text-decoration: none;
     color: white;
 }
+
 
 .history-bar {
   float: left;
