@@ -60,6 +60,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
         var contentString = '<div className="content">'+
                 '<h2>Brewery: ' + brewery.brewery.name + '</h2>' +
+                '<h2>Brewery Type: ' + brewery.locationTypeDisplay + '</h2>' +
                 '<h3>' + brewery.locality + ', '+brewery.region +' '+brewery.postalCode +'</h3>' +
 
                 '<a href= "'+ brewery.brewery.website +'" target="_blank">' +  brewery.brewery.website + '</a>' +

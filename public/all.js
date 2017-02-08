@@ -412,33 +412,19 @@ if (window.BeerRouter === undefined) {
   window.BeerRouter = {};
 }
 (function () {
-  var Ibu2and4Component = function (_React$Component) {
-    _inherits(Ibu2and4Component, _React$Component);
-
-    function Ibu2and4Component() {
-      _classCallCheck(this, Ibu2and4Component);
-
-      return _possibleConstructorReturn(this, (Ibu2and4Component.__proto__ || Object.getPrototypeOf(Ibu2and4Component)).call(this));
-    }
-
-    _createClass(Ibu2and4Component, [{
-      key: 'componentDidMount',
-      value: function componentDidMount() {
-        console.log('IbuComponent.ComponentDidMount');
-        // this.getTheData();
-      }
-    }]);
-
-    return Ibu2and4Component;
-  }(React.Component);
-
-  var IbuComponent = function (_React$Component2) {
-    _inherits(IbuComponent, _React$Component2);
+  var IbuComponent = function (_React$Component) {
+    _inherits(IbuComponent, _React$Component);
 
     function IbuComponent() {
       _classCallCheck(this, IbuComponent);
 
-      return _possibleConstructorReturn(this, (IbuComponent.__proto__ || Object.getPrototypeOf(IbuComponent)).call(this));
+      var _this = _possibleConstructorReturn(this, (IbuComponent.__proto__ || Object.getPrototypeOf(IbuComponent)).call(this));
+
+      _this.state = {
+        currentClass: 'nav-2',
+        apiResult: { data: [] }
+      };
+      return _this;
     }
 
     _createClass(IbuComponent, [{
@@ -450,26 +436,25 @@ if (window.BeerRouter === undefined) {
     }, {
       key: 'getTheData',
       value: function getTheData(evt, query) {
-        var _this3 = this;
-
-        // var param = query;
+        var _this2 = this;
 
         $.ajax({
           url: "/api/theibu/" + query
         }).done(function (data) {
 
           var dataAsObjects = JSON.parse(data);
-          console.log('got data', dataAsObjects);
+          // console.log('got data', dataAsObjects);
 
-          _this3.setState({
-            apiResult: dataAsObjects
+          _this2.setState({
+            apiResult: dataAsObjects,
+            currentClass: query
           });
         });
       }
     }, {
       key: 'render',
       value: function render() {
-        var _this4 = this;
+        var _this3 = this;
 
         var theList;
 
@@ -490,7 +475,11 @@ if (window.BeerRouter === undefined) {
                   'Ibu:',
                   ibu.ibu
                 ),
-                ' '
+                React.createElement(
+                  'h2',
+                  { className: 'ellipses beerImgText', title: ibu.name },
+                  ibu.name
+                )
               );
             })
           );
@@ -551,36 +540,36 @@ if (window.BeerRouter === undefined) {
                 null,
                 React.createElement(
                   'div',
-                  { className: 'nav-2', onClick: function onClick(evt) {
-                      _this4.getTheData(evt, "10,19");
+                  { className: this.state.currentClass === "10,19" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
+                      _this3.getTheData(evt, "10,19");
                     } },
                   '10-19'
                 ),
                 React.createElement(
                   'div',
-                  { className: 'nav-2', onClick: function onClick(evt) {
-                      _this4.getTheData(evt, "20,39");
+                  { className: this.state.currentClass === "20,39" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
+                      _this3.getTheData(evt, "20,39");
                     } },
                   '20-39'
                 ),
                 React.createElement(
                   'div',
-                  { className: 'nav-2', onClick: function onClick(evt) {
-                      _this4.getTheData(evt, "40,70");
+                  { className: this.state.currentClass === "40,70" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
+                      _this3.getTheData(evt, "40,70");
                     } },
                   '40-70'
                 ),
                 React.createElement(
                   'div',
-                  { className: 'nav-2', onClick: function onClick(evt) {
-                      _this4.getTheData(evt, "71,100");
+                  { className: this.state.currentClass === "71,100" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
+                      _this3.getTheData(evt, "71,100");
                     } },
                   '71-100'
                 ),
                 React.createElement(
                   'div',
-                  { className: 'nav-2', onClick: function onClick(evt) {
-                      _this4.getTheData(evt, "101,250");
+                  { className: this.state.currentClass === "101,250" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
+                      _this3.getTheData(evt, "101,250");
                     } },
                   '101+'
                 )
@@ -786,7 +775,7 @@ if (window.BeerRouter === undefined) {
 
           console.log('LOCALITY', brewery);
 
-          var contentString = '<div className="content">' + '<h2>Brewery: ' + brewery.brewery.name + '</h2>' + '<h3>' + brewery.locality + ', ' + brewery.region + ' ' + brewery.postalCode + '</h3>' + '<a href= "' + brewery.brewery.website + '" target="_blank">' + brewery.brewery.website + '</a>' + '</div>';
+          var contentString = '<div className="content">' + '<h2>Brewery: ' + brewery.brewery.name + '</h2>' + '<h2>Brewery Type: ' + brewery.locationTypeDisplay + '</h2>' + '<h3>' + brewery.locality + ', ' + brewery.region + ' ' + brewery.postalCode + '</h3>' + '<a href= "' + brewery.brewery.website + '" target="_blank">' + brewery.brewery.website + '</a>' + '</div>';
 
           var infowindow = new google.maps.InfoWindow({
             content: contentString

@@ -17,18 +17,18 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
     getTheData(evt, query) {
 
-        $.ajax({
-          url: "/api/theabv/" + query
-        })
-        .done((data) => {
+      $.ajax({
+        url: "/api/theabv/" + query
+      })
+      .done((data) => {
 
-          var dataAsObjects = JSON.parse(data);
-          // console.log('got data', dataAsObjects);
-          this.setState({
-            apiResult: dataAsObjects,
-            currentClass: query
-          });
+        var dataAsObjects = JSON.parse(data);
+        // console.log('got data', dataAsObjects);
+        this.setState({
+          apiResult: dataAsObjects,
+          currentClass: query
         });
+      });
     }
 
     render(){
