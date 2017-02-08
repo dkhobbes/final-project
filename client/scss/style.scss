@@ -2,8 +2,7 @@
 $background-color: rgba(48, 62, 77, 1.0);
 
 
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
+
 #map {
   height: 780px;
   width: 85%;
@@ -14,20 +13,6 @@ html, body {
   margin: 0;
   padding: 0px;
 }
-
-// .beer-info {
-//   padding: 15px;
-//   z-index: 1;
-//   position: fixed;
-// }
-//
-// .beer-info li {
-//   padding: 5px;
-//   border: 1px solid black;
-//   width: 400px;
-//   background-color: white;
-//   color: black;
-// }
 
 #Title-beer {
   font-size: 24px;
@@ -99,8 +84,6 @@ html, body {
 
 .theList {
   padding: 60px;
-  // z-index: 1;
-  // width: 300px;
 }
 
 .theList li {
@@ -141,6 +124,10 @@ header {
   transition: width 2s;
 }
 
+.nav-tabs-on {
+  height: 35%;
+}
+
 .nav-tabs:hover {
   height: 35%;
 }
@@ -176,11 +163,11 @@ header {
   border-radius: 5px 5px 0 0 ;
 }
 
-a:link {
+header a:link {
     text-decoration: none;
 }
 
-a:visited {
+header a:visited {
     text-decoration: none;
     color: white;
 }

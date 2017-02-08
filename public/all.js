@@ -22,6 +22,7 @@ if (window.BeerRouter === undefined) {
 
       _this.state = {
         currentClass: 'nav-2',
+        headerClass: 'nav-tabs',
         apiResult: { data: [] }
       };
       return _this;
@@ -46,7 +47,8 @@ if (window.BeerRouter === undefined) {
           // console.log('got data', dataAsObjects);
           _this2.setState({
             apiResult: dataAsObjects,
-            currentClass: query
+            currentClass: query,
+            headerClass: query
           });
         });
       }
@@ -94,7 +96,7 @@ if (window.BeerRouter === undefined) {
             null,
             React.createElement(
               'div',
-              { className: 'nav-tabs' },
+              { className: this.state.headerClass === "home" ? "nav-tabs-on" : "nav-tabs" },
               React.createElement(
                 ReactRouter.Link,
                 { to: '/' },
@@ -103,7 +105,7 @@ if (window.BeerRouter === undefined) {
             ),
             React.createElement(
               'div',
-              { className: 'nav-tabs' },
+              { className: this.state.headerClass === "locator" ? "nav-tabs-on" : "nav-tabs" },
               React.createElement(
                 ReactRouter.Link,
                 { to: '/locator' },
@@ -112,7 +114,7 @@ if (window.BeerRouter === undefined) {
             ),
             React.createElement(
               'div',
-              { className: 'nav-tabs' },
+              { className: this.state.headerClass === "abv" ? "nav-tabs-on" : "nav-tabs" },
               React.createElement(
                 ReactRouter.Link,
                 { to: '/abv' },
@@ -121,7 +123,7 @@ if (window.BeerRouter === undefined) {
             ),
             React.createElement(
               'div',
-              { className: 'nav-tabs' },
+              { className: this.state.headerClass === "ibu" ? "nav-tabs-on" : "nav-tabs" },
               React.createElement(
                 ReactRouter.Link,
                 { to: '/ibu' },

@@ -7,6 +7,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
       super();
       this.state= {
         currentClass: 'nav-2',
+        headerClass: 'nav-tabs',
         apiResult: { data: [] }
       };
     }
@@ -26,7 +27,8 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
         // console.log('got data', dataAsObjects);
         this.setState({
           apiResult: dataAsObjects,
-          currentClass: query
+          currentClass: query,
+          headerClass: query
         });
       });
     }
@@ -47,10 +49,10 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
       return <div>
         <header>
-          <div className="nav-tabs"><ReactRouter.Link to={'/'}>home</ReactRouter.Link></div>
-          <div className="nav-tabs"><ReactRouter.Link to={'/locator'}>locator</ReactRouter.Link></div>
-          <div className="nav-tabs"><ReactRouter.Link to={'/abv'}>abv</ReactRouter.Link></div>
-          <div className="nav-tabs"><ReactRouter.Link to={'/ibu'}>ibu</ReactRouter.Link></div>
+          <div className={this.state.headerClass === "home" ? "nav-tabs-on" : "nav-tabs"}><ReactRouter.Link to={'/'}>home</ReactRouter.Link></div>
+          <div className={this.state.headerClass === "locator" ? "nav-tabs-on" : "nav-tabs"}><ReactRouter.Link to={'/locator'}>locator</ReactRouter.Link></div>
+          <div className={this.state.headerClass === "abv" ? "nav-tabs-on" : "nav-tabs"}><ReactRouter.Link to={'/abv'}>abv</ReactRouter.Link></div>
+          <div className={this.state.headerClass === "ibu" ? "nav-tabs-on" : "nav-tabs"}><ReactRouter.Link to={'/ibu'}>ibu</ReactRouter.Link></div>
         {/*  <div className="nav-tabs"><ReactRouter.Link to={'/history'}>history</ReactRouter.Link></div> */}
         </header>
         <div className="abvIbu-bkgd">
