@@ -233,6 +233,7 @@ header a:visited {
 .home-section {
   height: 40%;
   text-align: center;
+  margin: 0 auto;
   padding: 5%;
   color: #0B1C26;
   background-color: white; }
@@ -242,7 +243,7 @@ header a:visited {
   font-size: 28px; }
 
 #divs2center {
-  padding-top: 100px;
+  padding-top: 200px;
   display: block; }
 
 #home-2 {
@@ -250,7 +251,7 @@ header a:visited {
   width: 40%; }
 
 #home-2 p {
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   color: #0B1C26; }
@@ -263,14 +264,9 @@ header a:visited {
   background-color: white;
   margin-top: 25px; }
 
-.abvIbuImg {
-  width: 100px;
-  height: 100px;
-  background-size: cover;
-  text-align: center; }
-
 .abvIbu-bkgd {
-  background-color: #326173; }
+  background-color: #326173;
+  padding-top: 20px; }
 
 .beerImgText {
   color: white;
