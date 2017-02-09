@@ -19,7 +19,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
         <div id="home-picture">
         <div id="divs2center">
           <div className="home-section" id="home-2" ><h1>Welcome to Beer Me Finder</h1><p>Enjoy this application devoted to the beer and breweries near you. You can look at the breweries in your area, or see what beer has the highest abv to kick your butt.</p>
-          <button type="submit" className="learnButton"><ReactRouter.Link to={'/locator'}>Get Started</ReactRouter.Link></button>
+          <ReactRouter.Link to={'/locator'}><button type="submit" className="learnButton">Get Started</button></ReactRouter.Link>
           </div>
         </div>
         </div>

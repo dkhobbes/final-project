@@ -709,11 +709,11 @@ if (window.BeerRouter === undefined) {
                   'Enjoy this application devoted to the beer and breweries near you. You can look at the breweries in your area, or see what beer has the highest abv to kick your butt.'
                 ),
                 React.createElement(
-                  'button',
-                  { type: 'submit', className: 'learnButton' },
+                  ReactRouter.Link,
+                  { to: '/locator' },
                   React.createElement(
-                    ReactRouter.Link,
-                    { to: '/locator' },
+                    'button',
+                    { type: 'submit', className: 'learnButton' },
                     'Get Started'
                   )
                 )
