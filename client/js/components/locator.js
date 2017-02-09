@@ -200,12 +200,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
       </div>
       <Map info = {this.state.apiResult} />
-      <div className="example"></div>
-      <div className="example-2">
-      <p>Although precise numbers from the 19th century are difficult to confirm, this is almost certainly the first time the United States has crossed the 4,000 brewery barrier since the 1870s.<br></br><span>September 28, 2015</span><span>By Bart Watson</span><span>www.brewersassociation.org</span>
-      </p>
-      </div>
-        {/*{theList}*/}
+    
       </div>
     }
   }

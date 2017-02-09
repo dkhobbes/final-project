@@ -1023,33 +1023,7 @@ if (window.BeerRouter === undefined) {
               )
             )
           ),
-          React.createElement(Map, { info: this.state.apiResult }),
-          React.createElement('div', { className: 'example' }),
-          React.createElement(
-            'div',
-            { className: 'example-2' },
-            React.createElement(
-              'p',
-              null,
-              'Although precise numbers from the 19th century are difficult to confirm, this is almost certainly the first time the United States has crossed the 4,000 brewery barrier since the 1870s.',
-              React.createElement('br', null),
-              React.createElement(
-                'span',
-                null,
-                'September 28, 2015'
-              ),
-              React.createElement(
-                'span',
-                null,
-                'By Bart Watson'
-              ),
-              React.createElement(
-                'span',
-                null,
-                'www.brewersassociation.org'
-              )
-            )
-          )
+          React.createElement(Map, { info: this.state.apiResult })
         );
       }
     }]);
