@@ -60,20 +60,20 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
         <div className="ibu-content">
           <section>
-            <div className={this.state.currentClass === "2,4" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"2,4")}}> 2-4</div>
-            <div className={this.state.currentClass === "5,7" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"5,7")}}>5-7</div>
-            <div className={this.state.currentClass === "8,10" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"8,10")}}>8-10</div>
-            <div className={this.state.currentClass === "11,13" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"11,13")}}>11-13</div>
-            <div className={this.state.currentClass === "14,80" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"14,80")}}>14+</div>
+            <div className={this.state.currentClass === "2,4" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"2,4")}}> 2-4% abv</div>
+            <div className={this.state.currentClass === "5,7" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"5,7")}}>5-7% abv</div>
+            <div className={this.state.currentClass === "8,10" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"8,10")}}>8-10% abv</div>
+            <div className={this.state.currentClass === "11,13" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"11,13")}}>11-13% abv</div>
+            <div className={this.state.currentClass === "14,80" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"14,80")}}>14+% abv</div>
           </section>
           <div>
           </div>
           {
             this.state.apiResult.data.length
               ? theList
-              : <div>
+              : <div className="abvIbu-content">
                 <h2>Welcome to the ABV page</h2>
-                <h3>ABV stands for alcohol by volume.</h3>
+                <h3>ABV stands for alcohol by volume, and usually indicates how kick butt your beer is going to be. An average beer will be between 4-5% ABV. Select one of the tabs above to see beers within that range.</h3>
               </div>
           }
           </div>

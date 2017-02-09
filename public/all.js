@@ -146,41 +146,41 @@ if (window.BeerRouter === undefined) {
                   { className: this.state.currentClass === "2,4" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "2,4");
                     } },
-                  ' 2-4'
+                  ' 2-4% abv'
                 ),
                 React.createElement(
                   'div',
                   { className: this.state.currentClass === "5,7" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "5,7");
                     } },
-                  '5-7'
+                  '5-7% abv'
                 ),
                 React.createElement(
                   'div',
                   { className: this.state.currentClass === "8,10" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "8,10");
                     } },
-                  '8-10'
+                  '8-10% abv'
                 ),
                 React.createElement(
                   'div',
                   { className: this.state.currentClass === "11,13" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "11,13");
                     } },
-                  '11-13'
+                  '11-13% abv'
                 ),
                 React.createElement(
                   'div',
                   { className: this.state.currentClass === "14,80" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "14,80");
                     } },
-                  '14+'
+                  '14+% abv'
                 )
               ),
               React.createElement('div', null),
               this.state.apiResult.data.length ? theList : React.createElement(
                 'div',
-                null,
+                { className: 'abvIbu-content' },
                 React.createElement(
                   'h2',
                   null,
@@ -189,7 +189,7 @@ if (window.BeerRouter === undefined) {
                 React.createElement(
                   'h3',
                   null,
-                  'ABV stands for alcohol by volume.'
+                  'ABV stands for alcohol by volume, and usually indicates how kick butt your beer is going to be. An average beer will be between 4-5% ABV. Select one of the tabs above to see beers within that range.'
                 )
               )
             ),
@@ -558,41 +558,41 @@ if (window.BeerRouter === undefined) {
                   { className: this.state.currentClass === "10,19" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "10,19");
                     } },
-                  '10-19'
+                  '10-19 ibu'
                 ),
                 React.createElement(
                   'div',
                   { className: this.state.currentClass === "20,39" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "20,39");
                     } },
-                  '20-39'
+                  '20-39 ibu'
                 ),
                 React.createElement(
                   'div',
                   { className: this.state.currentClass === "40,70" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "40,70");
                     } },
-                  '40-70'
+                  '40-70 ibu'
                 ),
                 React.createElement(
                   'div',
                   { className: this.state.currentClass === "71,100" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "71,100");
                     } },
-                  '71-100'
+                  '71-100 ibu'
                 ),
                 React.createElement(
                   'div',
                   { className: this.state.currentClass === "101,250" ? "nav-2-on" : "nav-2", onClick: function onClick(evt) {
                       _this3.getTheData(evt, "101,250");
                     } },
-                  '101+'
+                  '101+ ibu'
                 )
               ),
               React.createElement('div', null),
               this.state.apiResult.data.length ? theList : React.createElement(
                 'div',
-                null,
+                { className: 'abvIbu-content' },
                 React.createElement(
                   'h2',
                   null,
@@ -601,7 +601,7 @@ if (window.BeerRouter === undefined) {
                 React.createElement(
                   'h3',
                   null,
-                  'IBU stands for International Bitterness Unit volume.'
+                  'IBU stands for International Bitterness Unit. Ibu usually relates to how hoppy a beer tastes. For instance a stout will usually have a low IBU and not have a very hoppy taste, while an IPA will usually have a high IBU and taste very hoppy. Most IPA beers usually fall into a range of 40-70 IBU. Select one of the tabs above to see beers within that range.'
                 )
               )
             ),

@@ -172,7 +172,7 @@ header {
   display: inline-block;
   float: left;
   height: 20%;
-  width: 50px;
+  width: 80px;
   text-align: center;
   margin-top: 20px;
   margin-left: 10px;
@@ -287,6 +287,15 @@ footer {
   background-color: #303e4d;
   width: 100%;
   height: 200px; }
+
+.abvIbu-content {
+  padding-top: 90px;
+  padding-left: 50px;
+  padding-right: 50px; }
+
+.abvIbu-content h2 {
+  font-weight: bold;
+  padding-bottom: 10px; }
 
 @media only screen and (max-width: 800px) {
   #home-picture {
