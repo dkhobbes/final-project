@@ -47,8 +47,7 @@ if (window.BeerRouter === undefined) {
           // console.log('got data', dataAsObjects);
           _this2.setState({
             apiResult: dataAsObjects,
-            currentClass: query,
-            headerClass: query
+            currentClass: query
           });
         });
       }
@@ -96,38 +95,38 @@ if (window.BeerRouter === undefined) {
             null,
             React.createElement(
               'div',
-              { className: this.state.headerClass === "home" ? "nav-tabs-on" : "nav-tabs" },
+              { className: 'nav-tabs' },
               React.createElement(
                 ReactRouter.Link,
                 { to: '/' },
-                'home'
+                'Home'
               )
             ),
             React.createElement(
               'div',
-              { className: this.state.headerClass === "locator" ? "nav-tabs-on" : "nav-tabs" },
+              { className: 'nav-tabs' },
               React.createElement(
                 ReactRouter.Link,
                 { to: '/locator' },
-                'locator'
+                'Locator'
               )
             ),
             React.createElement(
               'div',
-              { className: this.state.headerClass === "abv" ? "nav-tabs-on" : "nav-tabs" },
+              { className: 'nav-tabs' },
               React.createElement(
                 ReactRouter.Link,
                 { to: '/abv' },
-                'abv'
+                'ABV'
               )
             ),
             React.createElement(
               'div',
-              { className: this.state.headerClass === "ibu" ? "nav-tabs-on" : "nav-tabs" },
+              { className: 'nav-tabs' },
               React.createElement(
                 ReactRouter.Link,
                 { to: '/ibu' },
-                'ibu'
+                'IBU'
               )
             )
           ),
@@ -512,7 +511,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/' },
-                'home'
+                'Home'
               )
             ),
             React.createElement(
@@ -521,7 +520,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/locator' },
-                'locator'
+                'Locator'
               )
             ),
             React.createElement(
@@ -530,7 +529,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/abv' },
-                'abv'
+                'ABV'
               )
             ),
             React.createElement(
@@ -539,7 +538,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/ibu' },
-                'ibu'
+                'IBU'
               )
             )
           ),
@@ -659,7 +658,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/' },
-                'home'
+                'Home'
               )
             ),
             React.createElement(
@@ -668,7 +667,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/locator' },
-                'locator'
+                'Locator'
               )
             ),
             React.createElement(
@@ -677,7 +676,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/abv' },
-                'abv'
+                'ABV'
               )
             ),
             React.createElement(
@@ -686,7 +685,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/ibu' },
-                'ibu'
+                'IBU'
               )
             )
           ),
@@ -711,7 +710,7 @@ if (window.BeerRouter === undefined) {
                 React.createElement(
                   'p',
                   null,
-                  'Please enjoy this application devoted to the beer and Breweries near you. You can look at the breweries in your area, or see what beer has the highest abv to kick your butt.'
+                  'Enjoy this application devoted to the beer and breweries near you. You can look at the breweries in your area, or see what beer has the highest abv to kick your butt.'
                 )
               )
             )
@@ -952,7 +951,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/' },
-                'home'
+                'Home'
               )
             ),
             React.createElement(
@@ -961,7 +960,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/locator' },
-                'locator'
+                'Locator'
               )
             ),
             React.createElement(
@@ -970,7 +969,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/abv' },
-                'abv'
+                'ABV'
               )
             ),
             React.createElement(
@@ -979,7 +978,7 @@ if (window.BeerRouter === undefined) {
               React.createElement(
                 ReactRouter.Link,
                 { to: '/ibu' },
-                'ibu'
+                'IBU'
               )
             )
           ),
@@ -989,12 +988,12 @@ if (window.BeerRouter === undefined) {
             React.createElement(
               'h2',
               { id: 'Title-beer' },
-              'Find Local Breweries'
+              'FIND LOCAL BREWERIES'
             ),
             React.createElement(
               'p',
               null,
-              'We will help you locate your closest brewery. Simply type in your zip code below to begin, and map my beer.'
+              'Let us help you locate the breweries closest to you. Simply enter your state below to find your next beer.'
             ),
             React.createElement(
               'form',
@@ -1019,7 +1018,7 @@ if (window.BeerRouter === undefined) {
                   { type: 'submit', className: 'learnButton', onClick: function onClick(evt) {
                       _this6.clearHandler(evt);
                     } },
-                  'Clear results'
+                  'Clear Results'
                 )
               )
             )

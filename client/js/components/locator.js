@@ -179,21 +179,21 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
       return <div>
       <header>
-        <div className="nav-tabs"><ReactRouter.Link to={'/'}>home</ReactRouter.Link></div>
-        <div className="nav-tabs"><ReactRouter.Link to={'/locator'}>locator</ReactRouter.Link></div>
-        <div className="nav-tabs"><ReactRouter.Link to={'/abv'}>abv</ReactRouter.Link></div>
-        <div className="nav-tabs"><ReactRouter.Link to={'/ibu'}>ibu</ReactRouter.Link></div>
+        <div className="nav-tabs"><ReactRouter.Link to={'/'}>Home</ReactRouter.Link></div>
+        <div className="nav-tabs"><ReactRouter.Link to={'/locator'}>Locator</ReactRouter.Link></div>
+        <div className="nav-tabs"><ReactRouter.Link to={'/abv'}>ABV</ReactRouter.Link></div>
+        <div className="nav-tabs"><ReactRouter.Link to={'/ibu'}>IBU</ReactRouter.Link></div>
         {/*  <div className="nav-tabs"><ReactRouter.Link to={'/history'}>history</ReactRouter.Link></div> */}
       </header>
       <div id="control">
-        <h2 id="Title-beer">Find Local Breweries</h2>
-        <p>We will help you locate your closest brewery. Simply type in your zip code below to begin, and map my beer.</p>
+        <h2 id="Title-beer">FIND LOCAL BREWERIES</h2>
+        <p>Let us help you locate the breweries closest to you. Simply enter your state below to find your next beer.</p>
         <form method="get" id="chooseZip">
           {/*<button type="submit" className="learnButton">Use current location</button>*/}
           <div className="zipSearch">
     				<input id="textZip" type="text" placeholder="enter state" onKeyUp={(evt) => { this.keyUp(evt); }} ref={(input) => { this.myInput = input; }} />
     				<button type="submit" className="learnButton" onClick={(evt)=>{this.getTheData(evt); }} >Search for State</button>
-            <button type="submit" className="learnButton" onClick={(evt)=>{this.clearHandler(evt); }} >Clear results</button>
+            <button type="submit" className="learnButton" onClick={(evt)=>{this.clearHandler(evt); }} >Clear Results</button>
 
   			  </div>
         </form>
