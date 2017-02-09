@@ -771,7 +771,6 @@ if (window.BeerRouter === undefined) {
 
         this.googleMap = new google.maps.Map(this.map, {
           center: myLatLng,
-          scrollwheel: false,
           zoom: 5
         });
 

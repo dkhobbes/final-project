@@ -350,7 +350,173 @@ footer {
 }
 
 
+@media only screen and (max-width: 1100px) {
+  #control{
+  		float: left;
+  		color: black;
+  		width: 20%;
+      height: 781px;
+      background-color: $light-blue;
+  	}
+
+    #control h2, p {
+      padding: 10px 20px 5px 20px;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.3em;
+      font-size: 16px;
+    }
+
+  	#control input[type=text]{
+  		width: 60%;
+  		font-size: 16px;
+  		background-color: rgba(240, 234, 235, 1.0);
+  		border: 1px solid black;
+      margin-left: 20px;
+      margin-top: 10px;
+  	}
+
+    #control button {
+      margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    #map {
+      height: 781px;
+      width: 80%;
+    }
+
+    #divs2center {
+      padding-top: 180px;
+      display: block;
+    }
+    .abvIbu-content {
+      padding-top: 90px;
+    }
+    .ibu-content {
+      min-height:350px;
+    }
+}
+
 @media only screen and (max-width: 800px) {
+  #control{
+      float: left;
+      color: black;
+      width: 25%;
+      height: 781px;
+      background-color: $light-blue;
+    }
 
+    #control h2, p {
+      padding: 10px 20px 5px 10px;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.3em;
+      font-size: 14px;
+    }
 
+    #control input[type=text]{
+      width: 60%;
+      font-size: 16px;
+      background-color: rgba(240, 234, 235, 1.0);
+      border: 1px solid black;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    #control button {
+      margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    #map {
+      height: 781px;
+      width: 75%;
+    }
+    .learnButton {
+      width: 60%;
+      font-size: 14px;
+      margin: 0 auto;
+      display: block;
+      background-color: $light-mustard;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+    }
+    .abvIbu-content {
+      padding-top: 120px;
+    }
+    .ibu-content {
+      min-height:400px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+  #control{
+      // float: left;
+      color: black;
+      width: 100%;
+      height: 300px;
+      background-color: $light-blue;
+    }
+
+    #control h2, p {
+      padding: 20px 30px 10px 20px;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.3em;
+      font-size: 16px;
+    }
+
+    #control input[type=text]{
+      width: 40%;
+      font-size: 16px;
+      background-color: rgba(240, 234, 235, 1.0);
+      border: 1px solid black;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    #control button {
+      margin-top: 20px;
+      width: 61%;
+      margin: 0 auto;
+      display: block;
+    }
+
+    #map {
+      height: 500px;
+      width:100%;
+    }
+    #divs2center {
+      padding-top: 100px;
+      display: block;
+    }
+    .learnButton {
+      width: 60%;
+      font-size: 14px;
+      margin: 0 auto;
+      display: block;
+      background-color: $light-mustard;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+    }
+    .abvIbu-content {
+      padding-top: 160px;
+    }
+
+    .ibu-content {
+      min-height:500px;
+    }
 }

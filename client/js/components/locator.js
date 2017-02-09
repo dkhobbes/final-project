@@ -20,7 +20,6 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
       this.googleMap = new google.maps.Map(this.map, {
         center: myLatLng,
-        scrollwheel: false,
         zoom: 5
       });
 
@@ -200,7 +199,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
       </div>
       <Map info = {this.state.apiResult} />
-    
+
       </div>
     }
   }
