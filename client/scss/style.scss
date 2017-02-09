@@ -112,6 +112,11 @@ html, body {
   border-radius: 10px;
   margin: 10px;
   font-family: 'Open Sans', sans-serif;
+  max-width: 110px;
+}
+
+.theList li img {
+  max-width: 100%;
 }
 
 header {
@@ -460,7 +465,7 @@ footer {
       // float: left;
       color: black;
       width: 100%;
-      height: 300px;
+      height: 350px;
       background-color: $light-blue;
     }
 
@@ -479,14 +484,15 @@ footer {
       border: 1px solid black;
       margin-top: 30px;
       margin-bottom: 20px;
-      margin: 0 auto;
+      // margin: 0 auto;
       display: block;
     }
 
     #control button {
-      margin-top: 20px;
+      margin-top: 10px;
+      margin-bottom: 5px;
       width: 61%;
-      margin: 0 auto;
+      // margin: 0 auto;
       display: block;
     }
 
@@ -501,7 +507,7 @@ footer {
     .learnButton {
       width: 60%;
       font-size: 14px;
-      margin: 0 auto;
+      // margin: 0 auto;
       display: block;
       background-color: $light-mustard;
       color: white;
@@ -514,9 +520,14 @@ footer {
     }
     .abvIbu-content {
       padding-top: 160px;
+      padding-bottom: 40px;
     }
 
     .ibu-content {
       min-height:500px;
+    }
+
+    #textZip {
+      text-align: center;
     }
 }
