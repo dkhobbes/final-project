@@ -55,7 +55,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
         {/*  <div className="nav-tabs"><ReactRouter.Link to={'/history'}>history</ReactRouter.Link></div> */}
         </header>
         <div className="abvIbu-bkgd">
-        <div className="hops-img"></div>
+        <div className="abv-img"></div>
 
         <div className="ibu-content">
           <section>

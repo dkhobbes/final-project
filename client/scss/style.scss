@@ -131,7 +131,7 @@ header {
   border-radius: 0 0 5px 5px;
   display: inline-block;
   float: left;
-  height: 20%;
+  height: 25%;
   width: 60px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
@@ -189,6 +189,11 @@ header a:visited  {
     color: white;
 }
 
+.learnButton a:link,
+.learnButton a:visited {
+  text-decoration: none;
+  color: white;
+}
 
 .history-bar {
   float: left;
@@ -199,13 +204,31 @@ header a:visited  {
 }
 
 .hops-img {
-  width: 350px;
-  height: 200px;
-  background-image: url("logo.png");
-  margin: 0 auto;
-  display: block;
+  // width: 350px;
+  // height: 200px;
+  // background-image: url("logo.png");
+  // margin: 0 auto;
+  // display: block;
   // margin-top: 25px;
   // border-top: 2px solid gray;
+}
+
+.abv-img {
+  background-image: url('images/dkurth_beerme_ABV.png');
+  width: 343px;
+  height: 120px;
+  margin: 0 auto;
+  background-size: cover;
+  // display: block;
+}
+
+.ibu-img {
+  background-image: url('images/dkurth_beerme_IBU.png');
+  width: 343px;
+  height: 120px;
+  background-size: cover;
+  margin: 0 auto;
+  // display: block;
 }
 
 #home-picture {
@@ -217,42 +240,35 @@ header a:visited  {
 }
 
 .home-section {
-  float: left;
-  width: 25%;
-  height: 400px;
+  // width: 25%;
+  height: 40%;
   text-align: center;
   padding: 5%;
-  color: white;
-  background-color: rgba(25,20,71,0.4);
+  color: $navy;
+  background-color: white;
+}
+
+.home-section h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 28px;
 }
 
 #divs2center {
-  padding-top: 50px;
-  margin: 0 auto;
-  width: 90%;
-  overflow: auto;
+  padding-top: 100px;
+  display: block;
 }
 
-#home-center {
-  border-right: 2px solid lightgray;
-  border-radius:  25px 0 0 25px ;
-}
-
-#home-center h1 {
-  margin-top: 150px;
-  font-size: 40px;
-  font-family: 'Nunito', sans-serif;
-}
 
 #home-2 {
-  border-radius: 0 25px 25px 0;
-  width: 37%;
+  border-radius: 25px;
+  width: 40%;
 }
 
 #home-2 p {
-  margin-top: 120px;
-  font-size: 24px;
+  margin-top: 40px;
+  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
+  color: $navy;
 }
 
 .ibu-content {
@@ -339,49 +355,6 @@ footer {
 
 
 @media only screen and (max-width: 800px) {
-  #home-picture {
-    background-image: url('images/beerToasting.jpg');
-    background-size: cover;
-    height: 500px;
-    width: 100%;
-  }
 
-  .home-section {
-    // float: left;
-    width: 25%;
-    height: 300px;
-    text-align: center;
-    padding: 5%;
-    color: white;
-    background-color: rgba(25,20,71,0.4);
-  }
-
-  #divs2center {
-    padding-top: 50px;
-    margin: 0 auto;
-    width: 90%;
-    // overflow: auto;
-  }
-
-  #home-center {
-    border-bottom: 2px solid lightgray;
-    border-right: none;
-    border-radius:  25px 25px 0 0;
-  }
-
-  #home-center h1 {
-    margin-top: 150px;
-    font-size: 32px;
-  }
-
-  #home-2 {
-    border-radius: 0 0 25px 25px ;
-    width: 37%;
-  }
-
-  #home-2 p {
-    margin-top: 120px;
-    font-size: 20px;
-  }
 
 }

@@ -133,7 +133,7 @@ if (window.BeerRouter === undefined) {
           React.createElement(
             'div',
             { className: 'abvIbu-bkgd' },
-            React.createElement('div', { className: 'hops-img' }),
+            React.createElement('div', { className: 'abv-img' }),
             React.createElement(
               'div',
               { className: 'ibu-content' },
@@ -545,7 +545,7 @@ if (window.BeerRouter === undefined) {
           React.createElement(
             'div',
             { className: 'abvIbu-bkgd' },
-            React.createElement('div', { className: 'hops-img' }),
+            React.createElement('div', { className: 'ibu-img' }),
             React.createElement(
               'div',
               { className: 'ibu-content' },
@@ -697,20 +697,25 @@ if (window.BeerRouter === undefined) {
               { id: 'divs2center' },
               React.createElement(
                 'div',
-                { className: 'home-section', id: 'home-center' },
+                { className: 'home-section', id: 'home-2' },
                 React.createElement(
                   'h1',
                   null,
                   'Welcome to Beer Me Finder'
-                )
-              ),
-              React.createElement(
-                'div',
-                { className: 'home-section', id: 'home-2' },
+                ),
                 React.createElement(
                   'p',
                   null,
                   'Enjoy this application devoted to the beer and breweries near you. You can look at the breweries in your area, or see what beer has the highest abv to kick your butt.'
+                ),
+                React.createElement(
+                  'button',
+                  { type: 'submit', className: 'learnButton' },
+                  React.createElement(
+                    ReactRouter.Link,
+                    { to: '/locator' },
+                    'Get Started'
+                  )
                 )
               )
             )

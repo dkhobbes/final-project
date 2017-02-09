@@ -57,7 +57,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
           {/*  <div className="nav-tabs"><ReactRouter.Link to={'/history'}>history</ReactRouter.Link></div> */}
         </header>
         <div className="abvIbu-bkgd">
-        <div className="hops-img"></div>
+        <div className="ibu-img"></div>
         <div className="ibu-content">
           <section>
             <div className={this.state.currentClass === "10,19" ? "nav-2-on" : "nav-2"} onClick={(evt)=>{this.getTheData(evt,"10,19")}}>10-19 ibu</div>
