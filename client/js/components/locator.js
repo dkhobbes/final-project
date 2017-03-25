@@ -90,14 +90,9 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
 
     componentDidMount() {
       console.log('AppComponent.ComponentDidMount');
-      // this.getTheData();
-      // this.myInput;
     }
 
     getTheData(evt) {
-      // console.log(evt);
-      // if (evt.keyCode === 13) {
-      // var zip =input.value
 
       $.ajax({
         url: "/api/state/" + this.myInput.value
@@ -110,9 +105,7 @@ if (window.BeerRouter === undefined) {window.BeerRouter = {}; }
         this.setState ({
           apiResult: dataAsObjects
         })
-
       });
-      // }
     }
 
     clearHandler(evt) {
