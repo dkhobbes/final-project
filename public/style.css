@@ -120,6 +120,10 @@ html, body {
   text-align: center;
   padding: 10px; }
 
+.bolded {
+  font-weight: bold;
+  font-size: 18px; }
+
 .theList {
   padding: 60px; }
 
